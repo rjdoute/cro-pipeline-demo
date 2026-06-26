@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { getEpisode } from '../episodes'
 import { EpisodePlayer } from './EpisodePlayer'
+import { StoryView } from './StoryView'
 
 export function EpisodeScreen() {
   const { episodeId } = useParams()
@@ -19,6 +20,10 @@ export function EpisodeScreen() {
         </Link>
       </main>
     )
+  }
+
+  if (episode.sections && episode.sections.length > 0) {
+    return <StoryView episode={episode} />
   }
 
   return <EpisodePlayer episode={episode} />

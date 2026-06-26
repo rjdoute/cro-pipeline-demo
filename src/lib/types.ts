@@ -103,6 +103,8 @@ export interface DebriefBeat extends BaseBeat {
   proof?: string
 }
 
+import type { StorySection } from './story'
+
 export interface Episode {
   id: string
   /** Display name of the company / scenario. */
@@ -122,5 +124,8 @@ export interface Episode {
   youAre: string
   /** For frontier episodes: the honest "this is a vision" framing. */
   frontierNote?: string
-  beats: Beat[]
+  /** Deep long-form story (preferred). If present, renders via StoryView. */
+  sections?: StorySection[]
+  /** Legacy stepped beats (older format). */
+  beats?: Beat[]
 }

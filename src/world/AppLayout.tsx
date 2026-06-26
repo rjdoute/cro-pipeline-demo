@@ -6,7 +6,10 @@ export function AppLayout() {
   const onWorld = pathname === '/'
   return (
     <div className="min-h-full bg-ink-950 bg-aurora">
-      <header className="sticky top-0 z-30 border-b border-white/5 bg-ink-950/70 backdrop-blur">
+      <header
+        className="sticky top-0 z-30 border-b border-white/5 bg-ink-950/80 backdrop-blur"
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
+      >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <Link to="/" className="group flex items-center gap-2.5">
             <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent/15 ring-1 ring-accent/30">

@@ -8,8 +8,9 @@ import { BeatRenderer } from '../beats/Beats'
 
 export function EpisodePlayer({ episode }: { episode: Episode }) {
   const [i, setI] = useState(0)
-  const total = episode.beats.length
-  const beat = episode.beats[i]
+  const beats = episode.beats ?? []
+  const total = beats.length
+  const beat = beats[i]
   const accent = episode.accent
   const atEnd = i === total - 1
 
@@ -55,7 +56,7 @@ export function EpisodePlayer({ episode }: { episode: Episode }) {
 
       {/* Chapter rail */}
       <div className="mt-5 flex gap-1.5 overflow-x-auto pb-1">
-        {episode.beats.map((b, idx) => (
+        {beats.map((b, idx) => (
           <button
             key={b.id}
             onClick={() => setI(idx)}
