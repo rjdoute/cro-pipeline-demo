@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+*.tsbuildinfo
+*.local
+.env
+.env.*
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# Sensitive content overlays — NEVER commit while the repo is public.
+# These hold customer-identifying specifics (names, ARR, internal metrics).
+src/episodes/private/
